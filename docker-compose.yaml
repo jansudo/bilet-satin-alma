@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  bilet-sistemi:
+    # Mevcut dizindeki Dockerfile'ı kullanarak bir imaj oluştur
+    build: .
+    container_name: bilet_sistemi_web
+    ports:
+      # Bilgisayarınızdaki 8080 portunu, container'ın 80 portuna yönlendir
+      # (Tarayıcıda http://localhost:8080 olarak açacaksınız)
+      - "8080:80"
+    restart: unless-stopped
